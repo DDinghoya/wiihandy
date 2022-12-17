@@ -71,24 +71,24 @@ void wii_handy_menu_init()
   // The root menu
   //
 
-  wii_menu_root = wii_create_tree_node( NODETYPE_ROOT, "root" );
+  wii_menu_root = wii_create_tree_node( NODETYPE_ROOT, "루트" );
 
   TREENODE* child = NULL;
-  child = wii_create_tree_node( NODETYPE_RESUME, "Resume" );
+  child = wii_create_tree_node( NODETYPE_RESUME, "다시 시작" );
   wii_add_child( wii_menu_root, child );
 
   child = NULL;
-  child = wii_create_tree_node( NODETYPE_RESET, "Reset" );
+  child = wii_create_tree_node( NODETYPE_RESET, "재설정" );
   wii_add_child( wii_menu_root, child );
 
-  child = wii_create_tree_node( NODETYPE_LOAD_ROM, "Load cartridge" );
+  child = wii_create_tree_node( NODETYPE_LOAD_ROM, "카트리지 불러오기" );
   wii_add_child( wii_menu_root, child );
 
   child = wii_create_tree_node( NODETYPE_CARTRIDGE_SETTINGS_CURRENT_SPACER, "" );
   wii_add_child( wii_menu_root, child );
 
   TREENODE *cart_settings = wii_create_tree_node( 
-    NODETYPE_CARTRIDGE_SETTINGS_CURRENT, "Cartridge settings (current cartridge)" );
+    NODETYPE_CARTRIDGE_SETTINGS_CURRENT, "카트리지 설정 (현재 카트리지)" );
   wii_add_child( wii_menu_root, cart_settings );    
 
   child = wii_create_tree_node( NODETYPE_SPACER, "" );
@@ -99,16 +99,16 @@ void wii_handy_menu_init()
   //
 
   TREENODE *state = wii_create_tree_node( 
-    NODETYPE_SAVE_STATE_MANAGEMENT, "Save state management" );
+    NODETYPE_SAVE_STATE_MANAGEMENT, "저장 상태 관리" );
   wii_add_child( wii_menu_root, state );
 
   child = wii_create_tree_node( NODETYPE_AUTO_LOAD_STATE, 
-    "Auto load " );
+    "자동 불러오기 " );
   child->x = -2; child->value_x = -3;
   wii_add_child( state, child );
 
   child = wii_create_tree_node( NODETYPE_AUTO_SAVE_STATE, 
-    "Auto save " );
+    "자동 저장하기 " );
   child->x = -2; child->value_x = -3;
   wii_add_child( state, child );
 
@@ -116,18 +116,18 @@ void wii_handy_menu_init()
   wii_add_child( state, child );
 
   child = wii_create_tree_node( NODETYPE_LOAD_STATE, 
-    "Load saved state" );
+    "저장된 상태 로드" );
   wii_add_child( state, child );
 
   child = wii_create_tree_node( NODETYPE_SPACER, "" );
   wii_add_child( state, child );
 
   child = wii_create_tree_node( NODETYPE_SAVE_STATE, 
-    "Save state (current cartridge)" );
+    "저장 상태 (현재 카트리지)" );
   wii_add_child( state, child );
 
   child = wii_create_tree_node( NODETYPE_DELETE_STATE, 
-    "Delete saved state (current cartridge)" );
+    "저장된 상태 삭제 (현재 카트리지)" );
   wii_add_child( state, child );
 
   child = wii_create_tree_node( NODETYPE_SPACER, "" );
@@ -138,12 +138,12 @@ void wii_handy_menu_init()
   //   
 
   child = wii_create_tree_node( NODETYPE_CART_ORIENT, 
-    "Orientation " );
+    "방향 " );
   child->x = -2; child->value_x = -3;
   wii_add_child( cart_settings, child );
 
   child = wii_create_tree_node( NODETYPE_MAX_FRAMES_CART, 
-    "Maximum frame rate " );
+    "최대 프레임 속도 " );
   child->x = -2; child->value_x = -3;
   wii_add_child( cart_settings, child );
 
@@ -153,15 +153,15 @@ void wii_handy_menu_init()
   wii_add_child( cart_settings, child );
 
   child = wii_create_tree_node( 
-    NODETYPE_SAVE_CARTRIDGE_SETTINGS, "Save settings" );
+    NODETYPE_SAVE_CARTRIDGE_SETTINGS, "설정 저장" );
   wii_add_child( cart_settings, child );  
 
   child = wii_create_tree_node( 
-    NODETYPE_REVERT_CARTRIDGE_SETTINGS, "Revert to saved settings" );
+    NODETYPE_REVERT_CARTRIDGE_SETTINGS, "저장된 설정으로 되돌리기" );
   wii_add_child( cart_settings, child );  
 
   child = wii_create_tree_node( 
-    NODETYPE_DELETE_CARTRIDGE_SETTINGS, "Delete settings" );
+    NODETYPE_DELETE_CARTRIDGE_SETTINGS, "설정 삭제" );
   wii_add_child( cart_settings, child );  
 
   //
@@ -169,19 +169,19 @@ void wii_handy_menu_init()
   //
 
   TREENODE *display = wii_create_tree_node( NODETYPE_DISPLAY_SETTINGS, 
-    "Display settings" );
+    "디스플레이 설정" );
   wii_add_child( wii_menu_root, display );
 
   child = wii_create_tree_node( NODETYPE_SPACER, "" );
   wii_add_child( wii_menu_root, child );
 
   child = wii_create_tree_node( NODETYPE_RESIZE_SCREEN, 
-    "Screen size (horizontal) " );      
+    "화면 크기 (수평) " );      
   child->x = -2; child->value_x = -3;
   wii_add_child( display, child );     
 
   child = wii_create_tree_node( NODETYPE_RESIZE_SCREEN_VERT, 
-    "Screen size (vertical) " );      
+    "화면 크기 (수직) " );      
   child->x = -2; child->value_x = -3;
   wii_add_child( display, child );   
 
@@ -189,12 +189,12 @@ void wii_handy_menu_init()
   wii_add_child( display, child );
 
   child = wii_create_tree_node( NODETYPE_VSYNC, 
-    "Vertical sync " );                        
+    "수직 동기화 " );                        
   child->x = -2; child->value_x = -3;
   wii_add_child( display, child );   
 
   child = wii_create_tree_node( NODETYPE_MAX_FRAMES, 
-    "Maximum frame rate " );
+    "최대 프레임 속도 " );
   child->x = -2; child->value_x = -3;
   wii_add_child( display, child );
 
@@ -203,21 +203,21 @@ void wii_handy_menu_init()
   //
 
   TREENODE *advanced = wii_create_tree_node( NODETYPE_ADVANCED, 
-    "Advanced" );
+    "고급" );
   wii_add_child( wii_menu_root, advanced );    
 
   child = wii_create_tree_node( NODETYPE_DEBUG_MODE, 
-    "Debug mode " );
+    "디버그 모드 " );
   child->x = -2; child->value_x = -3;
   wii_add_child( advanced, child );
 
   child = wii_create_tree_node( NODETYPE_TOP_MENU_EXIT, 
-    "Top menu exit " );
+    "상단 메뉴 종료 " );
   child->x = -2; child->value_x = -3;
   wii_add_child( advanced, child );
 
   child = wii_create_tree_node( NODETYPE_WIIMOTE_MENU_ORIENT, 
-    "Wiimote (menu) " );
+    "위모트 (메뉴) " );
   child->x = -2; child->value_x = -3;
   wii_add_child( advanced, child );
 
@@ -238,13 +238,13 @@ void wii_menu_handle_get_header( TREENODE* menu, char *buffer )
     case NODETYPE_LOAD_ROM:
       if( !games_read )
       {
-        snprintf( buffer, WII_MENU_BUFF_SIZE, "Reading game list..." );                
+        snprintf( buffer, WII_MENU_BUFF_SIZE, "게임 목록 읽는 중..." );                
       }
       break;
     case NODETYPE_LOAD_STATE:
       if( !save_states_read )
       {
-        snprintf( buffer, WII_MENU_BUFF_SIZE, "Reading saved state list..." );                            
+        snprintf( buffer, WII_MENU_BUFF_SIZE, "저장된 상태 목록 읽는 중..." );                            
       }
       break;
     default:
@@ -267,11 +267,11 @@ void wii_menu_handle_get_footer( TREENODE* menu, char *buffer )
     case NODETYPE_LOAD_ROM:
       if( games_read )
       {
-        wii_get_list_footer( menu, "cartridge", buffer );
+        wii_get_list_footer( menu, "카트리지", buffer );
       }
       break;
     case NODETYPE_LOAD_STATE:
-      wii_get_list_footer( menu, "state save", buffer );
+      wii_get_list_footer( menu, "상태 저장", buffer );
       break;
     default:
       break;
@@ -298,12 +298,12 @@ void wii_menu_handle_get_node_name(
     case NODETYPE_RESIZE_SCREEN:
       snprintf( value, WII_MENU_BUFF_SIZE, "%s", 
         ( ( wii_screen_x == DEFAULT_SCREEN_X && 
-          wii_screen_y == DEFAULT_SCREEN_Y ) ? "(default)" : "Custom" ) );
+          wii_screen_y == DEFAULT_SCREEN_Y ) ? "(기본값)" : "커스텀" ) );
       break;
     case NODETYPE_RESIZE_SCREEN_VERT:
       snprintf( value, WII_MENU_BUFF_SIZE, "%s", 
         ( ( wii_screen_x_vert == DEFAULT_SCREEN_X_VERT && 
-          wii_screen_y_vert == DEFAULT_SCREEN_Y_VERT ) ? "(default)" : "Custom" ) );
+          wii_screen_y_vert == DEFAULT_SCREEN_Y_VERT ) ? "(기본값)" : "커스텀" ) );
       break;
     case NODETYPE_MAX_FRAMES:
       snprintf( value, WII_MENU_BUFF_SIZE, "%d", wii_max_frames );
@@ -311,7 +311,7 @@ void wii_menu_handle_get_node_name(
     case NODETYPE_MAX_FRAMES_CART:
       if( wii_handy_db_entry.maxFrames == MAX_FRAMES_DEFAULT )
       {
-        snprintf( value, WII_MENU_BUFF_SIZE, "(default)" );
+        snprintf( value, WII_MENU_BUFF_SIZE, "(기본값)" );
       }
       else
       {
@@ -348,17 +348,17 @@ void wii_menu_handle_get_node_name(
             break;
         }
         snprintf( value, WII_MENU_BUFF_SIZE, "%s", 
-          enabled ? "Enabled" : "Disabled" );
+          enabled ? "활성화" : "비활성화" );
         break;
     }
     case NODETYPE_WIIMOTE_MENU_ORIENT:
       if( wii_mote_menu_vertical )
       {
-        strmode="Upright";
+        strmode="똑바로";
       }
       else
       {
-        strmode="Sideways";
+        strmode="옆으로";
       }
       snprintf( value, WII_MENU_BUFF_SIZE, "%s", strmode );
       break;
@@ -366,16 +366,16 @@ void wii_menu_handle_get_node_name(
       switch( wii_handy_db_entry.orient )
       {
         case MIKIE_BAD_MODE:
-          strmode="(auto)";
+          strmode="(자동)";
           break;
         case MIKIE_NO_ROTATE:
-          strmode="Horizontal";
+          strmode="수평";
           break;
         case MIKIE_ROTATE_L:
-          strmode="Vertical (left)";
+          strmode="수직 (왼쪽)";
           break;
         case MIKIE_ROTATE_R:
-          strmode="Vertical (right)";
+          strmode="수직 (오른쪽)";
           break;
       }
       snprintf( value, WII_MENU_BUFF_SIZE, "%s", strmode );
@@ -522,12 +522,12 @@ void wii_menu_handle_select_node( TREENODE *node )
         wii_cartridge_hash, &wii_handy_db_entry ) )
       {
         wii_handy_db_entry.loaded = 1;
-        wii_set_status_message( "Successfully saved cartridge settings." );
+        wii_set_status_message( "카트리지 설정을 성공적으로 저장했습니다." );
       }
       else
       {
         wii_set_status_message( 
-          "An error occurred saving cartridge settings." );
+          "카트리지 설정을 저장하는 중에 오류가 발생했습니다." );
       }
       break;
     case NODETYPE_DELETE_CARTRIDGE_SETTINGS:
@@ -535,19 +535,19 @@ void wii_menu_handle_select_node( TREENODE *node )
       {
         wii_menu_reset_indexes();
         wii_menu_move( wii_menu_stack[wii_menu_stack_head], 1 );
-        wii_set_status_message( "Successfully deleted cartridge settings." );
+        wii_set_status_message( "카트리지 설정을 성공적으로 삭제했습니다." );
       }
       else
       {
         wii_set_status_message( 
-          "An error occurred deleting cartridge settings." );
+          "카트리지 설정을 삭제하는 중에 오류가 발생했습니다." );
       }
       // Load the values for the entry
       wii_handy_db_get_entry( wii_cartridge_hash, &wii_handy_db_entry );
       break;
     case NODETYPE_REVERT_CARTRIDGE_SETTINGS:
       wii_handy_db_get_entry( wii_cartridge_hash, &wii_handy_db_entry );
-      wii_set_status_message( "Successfully reverted to saved settings." );
+      wii_set_status_message( "저장된 설정으로 되돌렸습니다." );
       break;
     default:
       /* do nothing */
@@ -674,7 +674,7 @@ static void wii_read_game_list( TREENODE *menu )
   }
   else
   {
-    wii_set_status_message( "Error opening roms directory." );
+    wii_set_status_message( "ROM 디렉토리를 여는 중 오류가 발생했습니다." );
   }
 
   // Sort the games list
@@ -723,7 +723,7 @@ static void wii_read_save_state_list( TREENODE *menu )
   }
   else
   {
-    wii_set_status_message( "Error opening state saves directory." );
+    wii_set_status_message( "상태 저장 디렉터리를 여는 중 오류가 발생했습니다." );
   }
 
   // Sort the games list
