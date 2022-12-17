@@ -1,6 +1,9 @@
 name: Build
 
-on: [push]
+on:
+  push:
+  schedule:
+    - cron: "0 0 * * *"
 
 jobs:
   build:
@@ -12,7 +15,7 @@ jobs:
       with:
         submodules: recursive
     - run: docker run raz0red/devkitppc /opt/devkitpro/pacman/bin/pacman -Q
-    - run: docker run -v $(pwd):/source raz0red/devkitppc /source/dist.sh /tmp/wiihandy
+    - run: docker run -v $(pwd):/source raz0red/devkitppc /source/dist.sh /tmp/wiicolem
     - uses: actions/upload-artifact@v1
       with:
         name: dist
