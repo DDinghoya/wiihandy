@@ -97,7 +97,7 @@ BOOL wii_start_snapshot( char *savefile )
       if( !exists )            
       {
         wii_set_status_message(
-          "Unable to find associated ROM file." );                
+          "연결된 ROM 파일을 찾을 수 없습니다." );                
         seterror = TRUE;
       }
       else
@@ -112,7 +112,7 @@ BOOL wii_start_snapshot( char *savefile )
   if( !succeeded && !seterror )
   {
     wii_set_status_message( 
-      "The file selected is not a valid saved state file." );    
+      "선택한 파일은 유효한 저장된 상태 파일이 아닙니다." );    
   }
 
   return succeeded;
