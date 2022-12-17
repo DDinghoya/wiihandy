@@ -77,7 +77,7 @@ void wii_handle_init()
   // Startup the SDL
   if( !wii_sdl_init() ) 
   {
-    fprintf( stderr, "FAILED : Unable to init SDL: %s\n", SDL_GetError() );
+    fprintf( stderr, "실패 : SDL을 초기화할 수 없: %s\n", SDL_GetError() );
     exit( EXIT_FAILURE );
   }
 
