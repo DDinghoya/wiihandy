@@ -96,7 +96,7 @@ void wii_start_emulation( char *romfile, const char *savefile, bool reset, bool 
         if( ptr ) *ptr = '\0';
 
         char val[WII_MAX_PATH+256];
-        sprintf( val, "loaded: %s %s %s\n", cartname, wii_cartridge_hash_with_header, wii_cartridge_hash );
+        sprintf( val, "불러옴: %s %s %s\n", cartname, wii_cartridge_hash_with_header, wii_cartridge_hash );
         net_print_string( "", 0, val );
       }
 #endif
@@ -112,12 +112,12 @@ void wii_start_emulation( char *romfile, const char *savefile, bool reset, bool 
           if( sscheck == -2 )            
           {
             wii_set_status_message(
-              "The save specified is not valid." );                
+              "지정된 저장이 유효하지 않습니다." );                
           }
           else
           {
             wii_set_status_message(
-              "Unable to find the specified save state file." );                
+              "지정된 저장 상태 파일을 찾을 수 없습니다." );                
           }
 
           succeeded = false;
@@ -129,7 +129,7 @@ void wii_start_emulation( char *romfile, const char *savefile, bool reset, bool 
           if( !succeeded )
           {
             wii_set_status_message(
-              "Error loading the specified save state file." );                
+              "지정된 저장 상태 파일을 불러오는 중 오류가 발생했습니다." );                
           }
         }
       }
