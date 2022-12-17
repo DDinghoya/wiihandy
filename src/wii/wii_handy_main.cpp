@@ -257,7 +257,7 @@ static char* get_boot_rom_path()
 #ifdef WII_NETTRACE
     {
       char val[256];
-      sprintf( val, "looking for boot rom: %s\n", boot_rom_path );
+      sprintf( val, "부트롬을 찾는 : %s\n", boot_rom_path );
       net_print_string(__FILE__,__LINE__, val );  
     }
 #endif
@@ -266,7 +266,7 @@ static char* get_boot_rom_path()
     if( fp ) 
     {
 #ifdef WII_NETTRACE
-      net_print_string(__FILE__,__LINE__, "unable to find boot rom\n" );  
+      net_print_string(__FILE__,__LINE__, "부트롬을 찾을 수 없음\n" );  
 #endif
       fclose( fp );
     }
@@ -279,7 +279,7 @@ static char* get_boot_rom_path()
 #ifdef WII_NETTRACE
     {
       char val[256];
-      sprintf( val, "boot rom path set to: %s\n", boot_rom_path );
+      sprintf( val, "부트롬 경로 설정: %s\n", boot_rom_path );
       net_print_string(__FILE__,__LINE__, val );  
     }
 #endif
@@ -343,7 +343,7 @@ static void gxrender_callback()
                            
     if( timer_timerCount % wii_get_max_frames() == 0 )
     {
-      sprintf( text, "FPS: %0.2f (%0.2f), VS: %s, audio: %d %d %d, hash: %s", 
+      sprintf( text, "FPS: %0.2f (%0.2f), VS: %s, 오디오: %d %d %d, 해시: %s", 
         timer_fpsCounter,
         timer_fpsCounter2, 
         ( wii_vsync_enabled() ? "on" : "off" ),
